@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Currency Exchange Rates Comparisons</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="Nitish Subhash Soman">
+
+  <meta property="og:title" content="Currency Exchange Rates Comparisons">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="#">
+  <meta property="og:description" content="Currency Exchange Rates Comparisons">
+  <meta property="og:image" content="image.png">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <!-- <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml"> -->
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+  <link rel="stylesheet" href="/css/styles2.css">
+  <script type="text/javascript" src="external.js"></script>
+  <script type="text/javascript" src="test.js"></script>
+
+</head>
+
+<body>
+  <!-- <header>Header</header> -->
+
+
+  <section class="hero">
+    <div class="hero__content">
+      <!-- <h2>Hero Images</h2>
+          <p>Can be created with a background-image in CSS.</p> -->
+      <h1>Currency Exchange Rates Comparisons</h1>
+      <!-- <input type="button" onclick="dateCheck()" value="Display"> -->
+      <!-- <input type = "button" onclick = "exchange()" value = "exchange">  -->
+      <div class="form-container">
+        <form onsubmit="return false">
+          <div class="header">
+            <!-- <h1>Currency Exchange Rates Comparisons</h1> -->
+          </div>
+          <div class="form-field multi-input">
+            <label for="first-name">Currency: </label>
+            <select id="currency">
+              <option value="" selected="selected">Select One</option>
+              <option value="USD">USD - US Dollar</option>
+              <option value="AUD">AUD - Australian Dollar</option>
+              <option value="CAD">CAD - Canadian Dollar</option>
+              <option value="PLN">PLN - Polish Zloty</option>
+              <option value="MXN">MXN - Mexican Peso</option>
+              <option value="INR">INR - Indian Rupee</option>
+            </select>
+          </div>
+          <div class="error hidden" id="currencyError">
+            Please select a Currency
+          </div>
+          <div class="form-field input-right">
+            <label for="date">Date:</label>
+            <input type="date" id="date">
+
+          </div>
+          <div class="error hidden" id="dateError">
+            Please enter a valid date : Selected date is greater than the current date.
+          </div>
+          <div class="form-field submit-field">
+            <button onclick="formCheck()">Submit</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+  <div class="bodyContent" id="main" style="display:none;">
+    <div class="row">
+      <div class="column column1">
+        <div class="card">
+          <div class="container">
+            <h3>Currency1</h3>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h3>Currency2</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="card">
+        <div class="container">
+          <h3 id="title"></h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Currency</th>
+                <th>Exchange Rate</th>
+              </tr>
+            </thead>
+            <tbody id="tableData1">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column column1">
+        <div class="card">
+          <div class="container">
+            <div id="chartContainer3" style="height: 300px; width: 100%;">
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="card">
+        <div class="container">
+          <div id="chartContainer" style="height: 300px; width: 100%;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card">
+        <div class="container">
+          <div id="chartContainer4" style="height: 300px; width: 100%;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column column1">
+        <div class="card">
+          <div class="container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Currency</th>
+                  <th>Exchange Rate</th>
+                </tr>
+              </thead>
+              <tbody id="tableData2">
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h3>Currency2</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- <script src="js/scripts.js"></script> -->
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</body>
+
+</html>
