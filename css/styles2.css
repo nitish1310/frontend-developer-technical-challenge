@@ -21,6 +21,10 @@ h1 {
   font-size: 45px;
 }
 
+h3 {
+  text-align: center;
+}
+
 form {
   width: 75%;
   max-width: 1000px;
@@ -272,4 +276,19 @@ select:focus {
 }
 .hidden {
   display: none;
+}
+
+.container {
+  text-align: center;
+  /* margin:50px; */
+}
+
+img {
+  vertical-align: middle;
+}
+span {
+  font-weight: 600;
+}
+img + span {
+  margin-left: 20px;
 }

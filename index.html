@@ -40,7 +40,7 @@
       <!-- <h2>Hero Images</h2>
           <p>Can be created with a background-image in CSS.</p> -->
       <h1>Currency Exchange Rates Comparisons</h1>
-      <!-- <input type="button" onclick="dateCheck()" value="Display"> -->
+      <!-- <input type="button" onclick="currencyInfo()" value="Display"> -->
       <!-- <input type = "button" onclick = "exchange()" value = "exchange">  -->
       <div class="form-container">
         <form onsubmit="return false">
@@ -54,9 +54,8 @@
               <option value="USD">USD - US Dollar</option>
               <option value="AUD">AUD - Australian Dollar</option>
               <option value="CAD">CAD - Canadian Dollar</option>
-              <option value="PLN">PLN - Polish Zloty</option>
-              <option value="MXN">MXN - Mexican Peso</option>
-              <option value="INR">INR - Indian Rupee</option>
+              <option value="GBP">GBP - British Pound</option>
+              <option value="NZD">NZD - New Zealand Dollar</option>
             </select>
           </div>
           <div class="error hidden" id="currencyError">
@@ -74,7 +73,6 @@
             <button onclick="formCheck()">Submit</button>
           </div>
         </form>
-
       </div>
     </div>
   </section>
@@ -83,7 +81,8 @@
       <div class="column column1">
         <div class="card">
           <div class="container">
-            <h3>Currency1</h3>
+            <img src="https://www.countryflags.io/eu/flat/64.png"> <span>EUR - Euro</span>
+            <p>The euro is the official currency of 19 of the 27 member states of the European Union. The currency code for Euros is EUR. The currency symbol is €.</p>
             </div>
           </div>
         </div>
@@ -91,7 +90,9 @@
         <div class="column">
           <div class="card">
             <div class="container">
-              <h3>Currency2</h3>
+              <img id="iconCurrency"> <span id="titleCurrency"></span>
+              <p id="infoCurrency"></p>
+              
             </div>
           </div>
         </div>
@@ -100,8 +101,8 @@
     <div class="row">
       <div class="card">
         <div class="container">
-          <h3 id="title"></h3>
-          <table class="table">
+          <h3 id="title1"></h3>
+          <table id="theTable1" class="table">
             <thead>
               <tr>
                 <th>Currency</th>
@@ -111,6 +112,7 @@
             <tbody id="tableData1">
             </tbody>
           </table>
+          <button id="btnExport1" onClick="fnExcelReport1()">Export to xls</button>
         </div>
       </div>
     </div>
@@ -152,10 +154,10 @@
     </div>
 
     <div class="row">
-      <div class="column column1">
         <div class="card">
           <div class="container">
-            <table class="table">
+            <h3 id="title2"></h3>
+            <table id="theTable2" class="table">
               <thead>
                 <tr>
                   <th>Currency</th>
@@ -165,22 +167,30 @@
               <tbody id="tableData2">
               </tbody>
             </table>
+            <button id="btnExport2" onClick="fnExcelReport2()">Export to xls</button>
             </div>
-          </div>
         </div>
         
-        <div class="column">
+        <div class="row">
           <div class="card">
             <div class="container">
-              <h3>Currency2</h3>
+              <div id="chartContainer5" style="height: 300px; width: 100%;">
             </div>
           </div>
         </div>
       </div>
   </div>
+  <div class="row">
+    <div class="card">
+      <div class="container">
+        <div id="chartContainer6" style="height: 300px; width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
   <!-- <script src="js/scripts.js"></script> -->
   <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
 </body>
 
 </html>
