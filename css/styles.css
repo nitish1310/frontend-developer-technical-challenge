@@ -292,3 +292,10 @@ span {
 img + span {
   margin-left: 20px;
 }
+
+footer {
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: #283e51;
+}

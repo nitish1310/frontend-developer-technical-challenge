@@ -1,4 +1,3 @@
-var fetch = require("node-fetch");
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 function currencyInfo() {
@@ -56,32 +55,26 @@ function currencyInfo() {
     titleCurrency = currencyInfoData.find((item) => item.name === "USD").title;
     iconCurrency = currencyInfoData.find((item) => item.name === "USD").icon;
     infoCurrency = currencyInfoData.find((item) => item.name === "USD").info;
-    console.log(titleCurrency);
   } else if (currencyValue === "EUR") {
     titleCurrency = currencyInfoData.find((item) => item.name === "EUR").title;
     iconCurrency = currencyInfoData.find((item) => item.name === "EUR").icon;
     infoCurrency = currencyInfoData.find((item) => item.name === "EUR").info;
-    console.log(titleCurrency);
   } else if (currencyValue === "CAD") {
     titleCurrency = currencyInfoData.find((item) => item.name === "CAD").title;
     iconCurrency = currencyInfoData.find((item) => item.name === "CAD").icon;
     infoCurrency = currencyInfoData.find((item) => item.name === "CAD").info;
-    console.log(titleCurrency);
   } else if (currencyValue === "GBP") {
     titleCurrency = currencyInfoData.find((item) => item.name === "GBP").title;
     iconCurrency = currencyInfoData.find((item) => item.name === "GBP").icon;
     infoCurrency = currencyInfoData.find((item) => item.name === "GBP").info;
-    console.log(titleCurrency);
   } else if (currencyValue === "NZD") {
     titleCurrency = currencyInfoData.find((item) => item.name === "NZD").title;
     iconCurrency = currencyInfoData.find((item) => item.name === "NZD").icon;
     infoCurrency = currencyInfoData.find((item) => item.name === "NZD").info;
-    console.log(titleCurrency);
   } else if (currencyValue === "AUD") {
     titleCurrency = currencyInfoData.find((item) => item.name === "AUD").title;
     iconCurrency = currencyInfoData.find((item) => item.name === "AUD").icon;
     infoCurrency = currencyInfoData.find((item) => item.name === "AUD").info;
-    console.log(titleCurrency);
   } else {
     return false;
   }
@@ -101,10 +94,8 @@ function exchange() {
   document.getElementById("main").style.display = "block";
 
   var currencyValue = document.getElementById("currency").value;
-  console.log(currencyValue);
 
   var dateValue = document.getElementById("date").value;
-  console.log(dateValue);
 
   var title1 = document.getElementById("title1");
   title1.innerHTML = "EUR to " + currencyValue + " Comparisons";
@@ -112,18 +103,10 @@ function exchange() {
   var title2 = document.getElementById("title2");
   title2.innerHTML = "EUR to All Currency Comparison";
 
-  // var currency2 = document.getElementById("currency2");
-  // currency2.innerHTML = currencyValue;
-  // const url =
-  //   "http://api.exchangeratesapi.io/v1/latest?access_key=3a765ee97086b4b9f5b08d7aedfeba78&symbols=USD,AUD,CAD,PLN,MXN,EUR&format=1";
-
   const url =
     "http://api.exchangeratesapi.io/v1/" +
     dateValue +
     "?access_key=3a765ee97086b4b9f5b08d7aedfeba78&symbols=&symbols=USD,AUD,CAD,PLN,NZD,SEK,EUR,GBP,AED,DKK,ANG&format=1";
-  // +
-  // currencyValue +
-  // ",EUR&format=1";
 
   xhr.open("get", url);
 
@@ -135,16 +118,11 @@ function exchange() {
     if (xhr.status === 200) {
       // request successful - show response
       const data = JSON.parse(xhr.responseText);
-      // console.log(data.rates.USD);
-      // console.log(data);
-      // document.getElementById("data").innerHTML = data;
-      // document.getElementById("s1").value = data.rates.USD;
       var temp = "";
       var currencyRates = data.rates;
       Object.keys(currencyRates).forEach((itemData) => {
         if (itemData == "USD" || itemData == "EUR") {
           temp += "<tr>";
-          // temp += "<td>" + data[itemData].base + "</td>";
           temp += "<td>" + itemData + "</td>";
           temp += "<td>" + data.rates[itemData] + "</td></tr>";
         }
@@ -153,7 +131,6 @@ function exchange() {
       var temp2 = "";
       Object.keys(currencyRates).forEach((itemData) => {
         temp2 += "<tr>";
-        // temp += "<td>" + data[itemData].base + "</td>";
         temp2 += "<td>" + itemData + "</td>";
         temp2 += "<td>" + data.rates[itemData] + "</td></tr>";
       });
@@ -165,10 +142,9 @@ function exchange() {
       chart6();
       document.getElementById("tableData1").innerHTML = temp;
       document.getElementById("tableData2").innerHTML = temp2;
-      //   console.log(xhr.responseText);
     } else {
       // request error
-      console.log("HTTP error", xhr.status, xhr.statusText);
+      // console.log("HTTP error", xhr.status, xhr.statusText);
     }
   };
 
@@ -221,7 +197,7 @@ function historicalExchange() {
       var data1 = JSON.parse(xhr1.responseText);
       dataArr.push(data1);
     } else {
-      console.log("HTTP error", xhr1.status, xhr1.statusText);
+      // console.log("HTTP error", xhr1.status, xhr1.statusText);
     }
   };
   xhr1.send();
@@ -233,7 +209,7 @@ function historicalExchange() {
       var data2 = JSON.parse(xhr2.responseText);
       dataArr.push(data2);
     } else {
-      console.log("HTTP error", xhr2.status, xhr2.statusText);
+      // console.log("HTTP error", xhr2.status, xhr2.statusText);
     }
   };
   xhr2.send();
@@ -245,11 +221,10 @@ function historicalExchange() {
       var data3 = JSON.parse(xhr3.responseText);
       dataArr.push(data3);
     } else {
-      console.log("HTTP error", xhr3.status, xhr3.statusText);
+      // console.log("HTTP error", xhr3.status, xhr3.statusText);
     }
   };
   xhr3.send();
-  // console.log(dataArr);
 
   xhr4.open("get", url4);
   xhr4.onreadystatechange = function () {
@@ -258,7 +233,7 @@ function historicalExchange() {
       var data4 = JSON.parse(xhr4.responseText);
       dataArr.push(data4);
     } else {
-      console.log("HTTP error", xhr4.status, xhr4.statusText);
+      // console.log("HTTP error", xhr4.status, xhr4.statusText);
     }
   };
   xhr4.send();
@@ -271,17 +246,10 @@ function historicalExchange() {
       dataArr.push(data5);
       chart6(dataArr);
     } else {
-      console.log("HTTP error", xhr1.status, xhr5.statusText);
+      // console.log("HTTP error", xhr1.status, xhr5.statusText);
     }
   };
   xhr5.send();
-
-  // console.log(dataArr);
-
-  // chart6(dataArr);
-
-  // localStorage.setItem("data", dataArr);
-  // console.log(localStorage.getItem("data"));
 }
 
 function chart1(currencyRates) {
@@ -295,7 +263,6 @@ function chart1(currencyRates) {
       });
     }
   });
-  // console.log(dps);
   var chart = new CanvasJS.Chart("chartContainer", {
     animationEnabled: true,
     exportEnabled: true,
@@ -369,7 +336,6 @@ function explodePie(e) {
 
 function chart3(currencyRates) {
   var dps = [];
-  console.log(currencyRates);
   var currencyValue = document.getElementById("currency").value;
   Object.keys(currencyRates).forEach((itemData) => {
     if (itemData == "USD" || itemData == "EUR") {
@@ -379,11 +345,11 @@ function chart3(currencyRates) {
       });
     }
   });
-  console.log(dps);
+
   var chart3 = new CanvasJS.Chart("chartContainer3", {
     animationEnabled: true,
     exportEnabled: true,
-    theme: "light2", // "light1", "light2", "dark1", "dark2"
+    theme: "light2",
     title: {
       text: "EUR to " + currencyValue + "Comparison Bar Chart",
     },
@@ -411,11 +377,11 @@ function chart4(currencyRates) {
       y: currencyRates[itemData],
     });
   });
-  console.log(dps);
+
   var chart4 = new CanvasJS.Chart("chartContainer4", {
     animationEnabled: true,
     exportEnabled: true,
-    theme: "light2", // "light1", "light2", "dark1", "dark2"
+    theme: "light2",
     title: {
       text: "EUR to All Currency Comparison Bar Chart",
     },
@@ -444,7 +410,7 @@ function chart5(currencyRates) {
       y: currencyRates[itemData],
     });
   });
-  console.log(dps);
+
   var chart5 = new CanvasJS.Chart("chartContainer5", {
     exportEnabled: true,
     animationEnabled: true,
@@ -572,7 +538,6 @@ function chart6() {
       timestamp: 1623801599,
     },
   ];
-  console.log(dataArr);
 
   var dps1 = [];
   var dps2 = [];
@@ -621,11 +586,6 @@ function chart6() {
     });
   });
 
-  // console.log(dps1);
-  // console.log(dps2);
-  // console.log(dps3);
-  // console.log(dps4);
-  // console.log(dps5);
   var chart6 = new CanvasJS.Chart("chartContainer6", {
     animationEnabled: true,
     exportEnabled: true,
@@ -767,11 +727,8 @@ function fnExcelReport2() {
   }
 }
 
-// exchange();
-
 function formCheck() {
   var dateValue = document.getElementById("date").value;
-  console.log(dateValue);
   if (dateValue == "") {
     alert("Please select date");
     return false;
@@ -779,9 +736,7 @@ function formCheck() {
 
   var selectedDate = dateValue;
   var currentDate = new Date();
-  console.log(currentDate);
   selectedDate = new Date(selectedDate);
-  console.log(selectedDate);
   if (selectedDate > currentDate) {
     document.getElementById("dateError").style.display = "block";
     return false;
@@ -798,16 +753,4 @@ function formCheck() {
   }
   exchange();
   currencyInfo();
-  // historicalExchange();
-}
-
-function test() {
-  var currencySelected = document.getElementById("currency").value;
-  var currencyValue = currencySelected.value;
-  console.log(currencySelected);
-
-  var dateValue = document.getElementById("date").value;
-  console.log(dateValue);
-  // var x = "Click me";
-  // document.getElementById("s1").value = x;
 }
