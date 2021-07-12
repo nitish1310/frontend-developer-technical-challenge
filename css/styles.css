@@ -73,25 +73,6 @@ select:focus {
 .form-field select {
   flex: 1;
 }
-@media screen and (max-width: 720px) {
-  .form-field {
-    flex-wrap: wrap;
-  }
-  .form-field label {
-    flex: 1;
-  }
-  .form-field input,
-  .form-field select {
-    flex: 1 1 100%;
-    padding: 1em;
-  }
-  .submit-field button {
-    flex: 0 1 100%;
-  }
-  .bodyContent {
-    margin-top: 350px;
-  }
-}
 
 .submit-field {
   display: flex;
@@ -155,23 +136,6 @@ select:focus {
 }
 
 /* Responsive columns */
-@media screen and (max-width: 500px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-  .hero__content {
-    padding: 2rem 3rem;
-    text-align: center;
-  }
-  .bodyContent {
-    margin-top: 350px;
-  }
-  .bodyContent {
-    margin-top: 350px;
-  }
-}
 
 @media only screen and (max-width: 768px) {
 }
@@ -235,7 +199,7 @@ select:focus {
 
 /*responsive*/
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .table thead {
     display: none;
   }
@@ -264,6 +228,39 @@ select:focus {
     font-size: 15px;
     font-weight: bold;
     text-align: left;
+  }
+
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .hero__content {
+    padding: 2rem 3rem;
+    text-align: center;
+  }
+  .bodyContent {
+    margin-top: 250px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .form-field {
+    flex-wrap: wrap;
+  }
+  .form-field label {
+    flex: 1;
+  }
+  .form-field input,
+  .form-field select {
+    flex: 1 1 100%;
+    padding: 1em;
+  }
+  .submit-field button {
+    flex: 0 1 100%;
+  }
+  .bodyContent {
+    margin-top: 250px;
   }
 }
 
