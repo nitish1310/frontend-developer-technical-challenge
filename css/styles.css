@@ -7,11 +7,9 @@ body {
   background: #efebeb;
   color: #fff;
   margin: 0;
-  /* padding: 50px 0; */
 }
 
 .form-container {
-  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +28,6 @@ form {
   max-width: 1000px;
   min-width: 400px;
   padding: 2em;
-  /* background: #5abc9b; */
   background: linear-gradient(to left, #4b79a1, #283e51);
   border-radius: 0.25em;
   box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
@@ -88,6 +85,12 @@ select:focus {
     flex: 1 1 100%;
     padding: 1em;
   }
+  .submit-field button {
+    flex: 0 1 100%;
+  }
+  .bodyContent {
+    margin-top: 350px;
+  }
 }
 
 .submit-field {
@@ -95,25 +98,25 @@ select:focus {
   justify-content: center;
 }
 .submit-field button {
+  background-color: Transparent;
   flex: 0 1 30%;
   margin-top: 10px;
   padding: 0.7em;
-  color: #f2f2f2;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   font-size: 1rem;
   font-family: inherit;
   text-transform: uppercase;
   letter-spacing: 0.09em;
   text-shadow: 0 1px 0 #fff;
-  background: #2c8a6a;
-  border-radius: 0.25em;
-  border: 0;
   transition: 0.3s;
   cursor: pointer;
+  overflow: hidden;
 }
-@media screen and (max-width: 720px) {
-  .submit-field button {
-    flex: 0 1 100%;
-  }
+
+.submit-field button:hover {
+  background: #417f97;
+  color: white;
 }
 
 .header {
@@ -171,9 +174,6 @@ select:focus {
 }
 
 @media only screen and (max-width: 768px) {
-  .bodyContent {
-    margin-top: 350px;
-  }
 }
 
 .card {
