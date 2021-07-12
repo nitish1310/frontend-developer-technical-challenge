@@ -93,6 +93,8 @@ function exchange() {
 
   document.getElementById("main").style.display = "block";
 
+  document.getElementById("footer").style.display = "block";
+
   var currencyValue = document.getElementById("currency").value;
 
   var dateValue = document.getElementById("date").value;
