@@ -108,7 +108,7 @@ function exchange() {
   const url =
     "http://api.exchangeratesapi.io/v1/" +
     dateValue +
-    "?access_key=3a765ee97086b4b9f5b08d7aedfeba78&symbols=&symbols=USD,AUD,CAD,PLN,NZD,SEK,EUR,GBP,AED,DKK,ANG&format=1";
+    "?access_key=3a765ee97086b4b9f5b08d7aedfeba78&symbols=&symbols=USD,AUD,CAD,PLN,NZD,SEK,EUR,GBP,DKK,ANG&format=1";
 
   xhr.open("get", url);
 
