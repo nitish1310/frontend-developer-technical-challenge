@@ -146,7 +146,7 @@ function exchange() {
       document.getElementById("tableData2").innerHTML = temp2;
     } else {
       // request error
-      // console.log("HTTP error", xhr.status, xhr.statusText);
+      // console.log("HTTP error occured", xhr.status, xhr.statusText);
     }
   };
 
